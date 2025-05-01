@@ -92,8 +92,7 @@ To compile and run this project, you need:
     *   Edit `.vscode/launch.json`: Update the `--module-path` in `vmArgs` to point to your **actual** JavaFX SDK `lib` folder.
 4.  **Compile the Code:** Open a terminal or command prompt **in the project's root directory** (`CollageGpsApp`) and run:
     ```bash
-    # IMPORTANT: Replace "path/to/your/javafx-sdk/lib" with the ACTUAL path!
-    javac --module-path "path/to/your/javafx-sdk/lib" --add-modules javafx.controls,javafx.web src/Location.java src/GPSApp.java -d bin
+    javac --module-path "E:\Downloads\openjfx-24_windows-x64_bin-sdk.zip\javafx-sdk-24\lib" --add-modules javafx.controls,javafx.web src/Location.java src/GPSApp.java -d bin
     ```
     *   Fix any compilation errors reported. If successful, this creates the `bin` directory with `.class` files.
 5.  **Copy Resources:** The `map.html` file needs to be available at runtime. Copy it from `src` to `bin`:
@@ -107,10 +106,9 @@ To compile and run this project, you need:
 6.  **Run the Application:**
     *   **From Command Line:** (Make sure you are in the project root directory)
         ```bash
-        # IMPORTANT: Replace "path/to/your/javafx-sdk/lib" with the ACTUAL path!
-        java --module-path "path/to/your/javafx-sdk/lib" --add-modules javafx.controls,javafx.web --add-exports javafx.web/netscape.javascript=ALL-UNNAMED -cp bin GPSApp
+        
+        java --module-path "E:\Downloads\openjfx-24_windows-x64_bin-sdk.zip\javafx-sdk-24\lib" --add-modules javafx.controls,javafx.web --add-exports javafx.web/netscape.javascript=ALL-UNNAMED -cp bin GPSApp
         ```
-        *(Note: `--add-exports...` is technically optional now but kept for history).*
     *   **From VS Code:** Open the "Run and Debug" view (Ctrl+Shift+D), select your launch configuration (e.g., "Launch GPSApp (Leaflet/OSM)"), and click the green play button (or press F5).
 
 ---
@@ -188,8 +186,7 @@ Currently, the application is primarily intended to be run from source code via 
 *   **Manual Execution:** Follow the steps outlined in section [6. Steps to Execute the Project](#6-steps-to-execute-the-project). This requires the end-user to have the correct JDK and JavaFX SDK installed and configured.
 *   **Potential Future Deployment (Not Implemented):** For easier distribution, native installers could be created using tools like:
     *   **`jlink`:** Creates a custom Java runtime image containing the application, its dependencies, and the necessary JDK modules.
-    *   **`jpackage`:** Builds platform-specific native installers (e.g., EXE, MSI, DMG, DEB, RPM) that bundle the application and a runtime image (often created using `jlink`). This provides a more user-friendly installation experience.
-
+    *   **`jpackage`:** Builds platform-specific native installers (e.g., EXE, MSI, DMG, DEB, RPM) that bundle the application and a runtime image (often created using `jlink`). 
 ---
 
 ## 12. Future Scope
@@ -214,6 +211,6 @@ This project was developed by:
 *   Oshan Paul
 *   Aditya Rana
 *   Shivangi Thapliyal
-*(Note: Roles can be adjusted based on actual contributions.)*
+
 
 ---
